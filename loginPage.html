@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>loginPage</title>
+	<link rel="stylesheet" href="calculator.html">
+
+	<style>
+		body{
+			
+			padding: 200px;
+			text-align: center;
+
+			
+		}
+		#loginPage{
+			font-family: cursive;
+			background-color: floralwhite;
+			border:100px;
+			border-radius: 50;
+			padding: 10px;
+			max-width: 300px;
+
+
+		}
+		.login_form #username_error,
+		.login_form #password_error{
+			margin-top: 5px;
+			width: fit;
+			font-size: 15px;
+			color: #C62828;
+			background: rgba(255, 0, 0, 0.1);
+			text-align: center;
+			padding: 5px 8px;
+			border-radius: 3px;
+			border: 1pxs solid #EF9A;
+			display: none;
+
+		}
+		label{
+			font-family: cursive ;
+			
+
+		}
+
+		button{
+			border: 25px;
+			border-radius: 25px;
+			font-family: cursive;
+			background-color: powderblue;
+			cursor: pointer;
+		}
+		button:active{
+			background-color: white;
+		}
+
+		
+	</style>
+
+</head>
+<body>
+	<div id="loginPage">
+		<h1>login</h1>
+		<br>
+		<form class="login_form" method="post">
+		<label>Enter Username</label>
+		<br>
+		<input type="text" id="username">
+		<br>
+		<div id="username_error">Please enter your Username</div>
+		<label>Enter Password</label>
+		<br>
+		<input type="text" id="password">
+		<label id="password_error">Please enter your password</label>
+		<br>
+		<button onclick="login">login</button>
+	</form>
+
+	</div>
+	<script>
+		function login(){
+			var corUsername = "mary";
+			var corPassword = "1234";
+
+			var typeUsername = document.getElementById("username").value;
+			var typePassword = document.getElementById("password").value;
+
+			if(typeUsername .equals corUsername && typePassword .equals corPassword){
+				document.getElementById("error").innerHTML = "Correct username and password";
+				document.getElementById("error").style.color="red";
+				window.location.href="calculator.html";
+				alert("username and password match!")
+
+			}else{
+				document.getElementById("error").innerHTML = "Invalid access! Try again!";
+			typeUsername="";
+			typePassword="";
+			}
+		}
+	</script>
+
+</body>
+</html>
