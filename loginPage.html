@@ -1,104 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>loginPage</title>
-	<link rel="stylesheet" href="calculator.html">
+    
+    <title>Login</title>
+    
 
-	<style>
-		body{
-			
-			padding: 200px;
-			text-align: center;
+    <style>
+        body {
+            font-family: arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+        .loginPage {
+            background-color: ghostwhite;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .loginPage h2 {
+            margin: 0 0 20px;
+            text-align: center;
+        }
+        .loginPage label {
+            display: block;
+            margin-bottom: 8px;
+            width: fit;
+            font-size: 15px;
+        }
+        .loginPage input {
+            width: 95%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: ghostwhite;
+        }
+        .loginPage button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .loginPage button:active {
+            background-color: lightgreen;
+        }
+        .loginPage input:hover{
+            background-color: white;
 
-			
-		}
-		#loginPage{
-			font-family: cursive;
-			background-color: floralwhite;
-			border:100px;
-			border-radius: 50;
-			padding: 10px;
-			max-width: 300px;
-
-
-		}
-		.login_form #username_error,
-		.login_form #password_error{
-			margin-top: 5px;
-			width: fit;
-			font-size: 15px;
-			color: #C62828;
-			background: rgba(255, 0, 0, 0.1);
-			text-align: center;
-			padding: 5px 8px;
-			border-radius: 3px;
-			border: 1pxs solid #EF9A;
-			display: none;
-
-		}
-		label{
-			font-family: cursive ;
-			
-
-		}
-
-		button{
-			border: 25px;
-			border-radius: 25px;
-			font-family: cursive;
-			background-color: powderblue;
-			cursor: pointer;
-		}
-		button:active{
-			background-color: white;
-		}
-
-		
-	</style>
-
+        }
+    </style>
 </head>
 <body>
-	<div id="loginPage">
-		<h1>login</h1>
-		<br>
-		<form class="login_form" method="post">
-		<label>Enter Username</label>
-		<br>
-		<input type="text" id="username">
-		<br>
-		<div id="username_error">Please enter your Username</div>
-		<label>Enter Password</label>
-		<br>
-		<input type="text" id="password">
-		<label id="password_error">Please enter your password</label>
-		<br>
-		<button onclick="login">login</button>
-	</form>
+    <script type="text/javascript">
+        function Login(){
+            var correctusername = "mary";
+            var correctpassword = "0000";
+            var typeusername = document.getElementById("username").value;
+            var typepassword = document.getElementById("password").value;
+            var notifElement = document.getElementById("notif");
+            if (typeusername==correctusername && typepassword==correctpassword ){
+              document.getElementById("notif").innerHTML="login successful";
+                
+                location.href="calculator.html";
+            } else{
+                alert("Na wrong ka!")
+            }
+        }
+    </script>
 
-	</div>
-	<script>
-		function login(){
-			var corUsername = "mary";
-			var corPassword = "1234";
+    <div class="loginPage">
+        <h2>Login</h2>
+        
+            <label for="username">Username</label>
+            <input type="text" id="username">
 
-			var typeUsername = document.getElementById("username").value;
-			var typePassword = document.getElementById("password").value;
+            <label for="password">Password</label>
+            <input type="password" id="password">
+            <label id="error"></label>
 
-			if(typeUsername .equals corUsername && typePassword .equals corPassword){
-				document.getElementById("error").innerHTML = "Correct username and password";
-				document.getElementById("error").style.color="red";
-				window.location.href="calculator.html";
-				alert("username and password match!")
+            <button type="submit" onclick="Login()">Login</button>
+            <p id="notif"></p>
 
-			}else{
-				document.getElementById("error").innerHTML = "Invalid access! Try again!";
-			typeUsername="";
-			typePassword="";
-			}
-		}
-	</script>
+        
+    </div>
 
 </body>
 </html>
